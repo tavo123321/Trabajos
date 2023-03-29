@@ -1,0 +1,28 @@
+importar pandas como pd
+
+def analizar_resultados(df):
+   
+    promedio_nacional_math = df['MAT_PROMEDIO'].mean()
+
+ 
+    promedio_local_math = df[df['ESTU_DEPTO_RESIDE'] == 'ATLÁNTICO']['MAT_PROMEDIO'].mean()
+
+    promedio_math_oficial = df[df['COLE_NATURALEZA'] == 'OFICIAL']['MAT_PROMEDIO'].mean()
+    promedio_math_no_oficial = df[df['COLE_NATURALEZA'] == 'NO OFICIAL']['MAT_PROMEDIO'].mean()
+    si promedio_matematicas_oficial > promedio_matematicas_no_oficial:
+        mejor_resultado = (promedio_math_oficial, 'oficial')
+    demás:
+        mejor_resultado = (promedio_math_no_oficial, 'no oficial')
+
+    si promedio_local_math > promedio_nacional_math:
+        performance_math = (promedio_local_math, 'local')
+    demás:
+        performance_math = (promedio_nacional_math, 'nacional')
+
+    volver {'nacional_math': promedio_nacional_math, 'performance_math': performance_math, 'mejor_resultado': mejor_resultado}
+
+df = pd.read_csv('ruta/al/archivo.csv', sep=';')
+
+resultados = analizar_resultados(df)
+
+imprimir(resultados)
