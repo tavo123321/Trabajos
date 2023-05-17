@@ -1,0 +1,26 @@
+/* Estilos para el contenedor del producto */
+
+.product {
+    display: inline-block;
+    /* Alinea los productos en línea */
+    margin-bottom: 20px;
+    /* Agrega margen inferior para separar los productos */
+    text-align: center;
+    /* Centra el contenido del contenedor */
+}
+
+
+/* Estilos para las imágenes */
+
+.product img {
+    width: 200px;
+    /* Establece el ancho de la imagen */
+}
+
+
+/* Estilos para el texto del producto */
+
+.product p {
+    margin-top: 10px;
+    /* Agrega margen superior para separar la imagen del texto */
+}
